@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphalt la liste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="damier"></div>
+        <div id="Titre"><i>SPHALT</i></div>
+        <div class="damier"></div>
+    </header>
+    <main>
+        <section>
+            <div id="firstBlock">
+                <div id="firstBlockText">
+                    <h1>La Sphalt.</h1>
+                    <h3>Liste BDE/BDS 2021/2022 de Phelma.</h3>
+                    <p>La Sphalt est une liste de 50 personnes motivées qui, malgré sa 
+                        deuxième place aux résultats finaux; a marqué l'histoire 
+                        de Phelma. Revenons donc sur leur parcours et apprenons en plus
+                        à leur sujet.
+                    </p>
+                    <h3>Leur thème ?</h3>
+                    <p>Le monde du Racing et de la course automobile.</p>
+                    <h3>Leur logo ?</h3>
+                    <p>C'est le logo que vous voyez, un phénix qui est l'emblème de l'école
+                        accompagné de deux voitures de course ainsi que deux drapeaux à damier.
+                    </p>
+                </div>
+                <div id="firstBlockImage">
+                    <img src="pictures/logo-sphalt.jpg" id="logo"></img>
+                    <div id="circle">X</div>
+                    <div id="texteImage">N'hésite pas à cliquer sur le logo pour mieux le voir.</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="secondBlock">
+                <div id="titleNitro">
+                    <div id="Nitro">
+                        <h1><i>NITRO</i></h1>
+                        <div class="damier"></div>
+                    </div>
+                    <div id="voiture">
+                        <audio id="audio" src="pictures/bruit-voiture.wav"></audio>
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets2.lottiefiles.com/datafiles/HN7OcWNnoqje6iXIiZdWzKxvLIbfeCGTmvXmEm1h/data.json"  background="transparent"  speed="1"  style="width: 400px; height: 500px;"  loop autoplay></lottie-player>
+                    </div>
+                    <div id="rectangle"></div>
+                </div>
+                <!-- Bouton pour faire apparaitre le second bloc en animation -->
+                <div id="buttonNitro">
+                    <a href="#" id="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        ACTIVER LA NITRO
+                    </a>
+                </div>
+                <div id="secondBlockMain">
+                    <div id="nitroVideo">
+                        <iframe src="https://www.youtube.com/embed/28bF400D8_Q" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div id="NitroTexte">
+                        <h1>Un peu de Nitro</h1>
+                        <p>
+                            Et oui, vous avez reconnu le début du refrain qui a fait danser tout Grenoble INP.<br>
+                            Ce son a fait l'unanime au sein de Phelma et a été élu meilleur son de liste à Phelma de l'année 2021/2022. <br>
+                            Mais ce n'est pas tout, cette année un compte Instagram @actu.rapinp_ a crée un tournoi faisant s'affronter les différents sons de liste
+                            de toutes les écoles de Grenoble INP des années 2021/2022 et 2022/2023. Et c'est la Sphalt qui a remporté ce tournoi haut la main en éliminant
+                            chacune des listes qui l'affrontait.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- Logo metal mp4 -->
+        <video autoplay muted loop id="logoMetal">
+            <source src="pictures/logo-metal.mp4" type="video/mp4">
+        </video>
+        <div id="contactMe">
+            <h1>Me contacter</h1>
+            <div id="contact">
+                <div id="mail">
+                    <h2>&#x1F4E7; MAIL</h2>
+                    <a href="mailto:victor.garreau1@gmail.com">
+                        victor.garreau1@gmail.com
+                    </a>
+                </div>
+                <div id="phone">
+                    <h2>PHONE &#x1F4DE;</h2>
+                    <p>06 33 65 71 96</p>
+                </div>
+            </div>
+        </div>
+        <div id="vide"></div>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

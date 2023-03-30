@@ -1,0 +1,526 @@
+/* Importe la police Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Importe la police Impact */
+@import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
+
+/* Normalisation de base de tous les elements html */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: black;
+}
+
+
+
+main{
+    background-color: black;
+    font-family: 'Poppins', sans-serif;;
+}
+
+#Titre{
+    color: yellow;
+    font-size: 50px;
+    font-family: Impact, 'Poppins', sans-serif;
+}
+
+
+#firstBlockText{
+    color: white;
+    font-size: 3vw;
+    /* Permet d'aligner le texte à la fin de la ligne */
+    text-align: justify;
+    width: 95%;
+    margin-left: 2%;
+}
+
+#firstBlockImage{
+    width: 100vw;
+    margin-left: 7%;
+}
+
+/* Permet simplement que le texte ne dépasse lors d'une taille d'écran trop petite */
+#texteImage{
+    font-size: 1px;
+}
+
+
+#logo{
+    margin-top: 2%;
+    transform-style: preserve-3d;
+    width:80%;
+    box-shadow: 0 20px 20px rgba(255,255,255,0.3);
+    
+}
+
+
+/* Hidden circle */
+#circle {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: grey;
+    position: absolute;
+    top: 110px;
+    left: 79%;
+    transform: translate(0%, 0%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7vh;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.move-animation {
+    animation: move 1s ease;
+}
+
+.move-animation-reverse {
+    animation: move-reverse 1s ease;
+}
+
+/* Animation qui déplace le logo avec une rotation pendant le mouvement */
+@keyframes move {
+    0% {
+        transform: translateX(0px) rotateY(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotateY(360deg); 
+    }
+}
+
+/* Animation inverse */
+@keyframes move-reverse {
+    0% {
+        transform: translateX(-50%) rotateY(360deg);
+    }
+    100% {
+        transform: translateX(0px) rotateY(0deg); 
+    }
+}
+
+
+/* On gere maintenant le second bloc */
+
+#secondBlock{
+    /* justify-content: space-between;
+    align-items: center; */
+    /* margin-top: 100vh; */
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+#voiture{
+    /* Retourne la voiture */
+    transform: scaleX(-1);
+    /* Place la voiture à gauche de l'écran */
+    float: left;
+    overflow: hidden;
+    /* Permet de placer la voiture par dessus les damiers */
+    position: relative;
+    z-index: 2;
+    /* Permet de placer la voiture par dessus les damiers */
+    margin-top: -290px;
+    margin-left: -400px;
+}
+
+/* Animation de la voiture qui traverse l'écran */
+@keyframes moveCar {
+    0% {
+        transform: translateX(-150px) scaleX(-1);
+    }
+    100% {
+        transform: translateX(120vw) scaleX(-1);
+    }
+}
+
+.car-animation {
+    animation: moveCar linear 3s;
+}
+
+@keyframes moveRectangle {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(120vw);
+    } 
+}
+
+.rectangle-animation {
+    animation: moveRectangle linear 3s;
+}
+
+#buttonNitro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+    font-family: Poppins, sans-serif;
+}
+
+#buttonNitro a{
+    height: 100%;
+    position : relative;
+    display: inline-block;
+    padding: 25px 50px;
+    color: yellow;
+    font-size: 20px;   
+    /* Enleve le soulignement */
+    text-decoration: none; 
+    letter-spacing: 3px;
+    /* Permet de cacher l'animation qui deborde */
+    overflow: hidden;
+}
+
+#buttonNitro a:hover{
+    /* Fond du bouton est un gradient de jaune */
+    background: linear-gradient(90deg, rgba(255, 255, 0, 0.915), rgba(255, 255, 0, 0.784));
+    color: black;
+    /* Cree une ombre style neon */
+    box-shadow: 0 0 5px yellow, 0 0 25px yellow, 0 0 50px yellow;
+    border-radius: 25px;
+}
+
+
+#buttonNitro a span{
+    position: absolute;
+    display: block;
+}
+
+#buttonNitro a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, yellow);
+    animation: animate1 1s linear infinite;
+}
+
+#buttonNitro a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, yellow);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+#buttonNitro a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, yellow);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+#buttonNitro a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, yellow);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%, 100%{
+        left: 100%;
+    }
+}
+
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%, 100%{
+        top: 100%;
+    }
+}
+
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%, 100%{
+        right: 100%;
+    }
+}
+
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%, 100%{
+        bottom: 100%;
+    }
+}
+
+#Nitro{
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.926);
+    font-size: 50px;
+    font-family: Impact, 'Poppins', sans-serif;
+}
+
+
+
+#rectangle{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    /* Permet de le placer au premier plan */
+    z-index: 1;
+    position: relative; 
+    /* Permet de le placer au premier plan */
+    margin-top: -100px;
+}
+
+
+
+#nitroVideo{
+    opacity: 0;
+    margin-left: 10%;
+}
+
+#nitroVideo iframe{
+    width: 80%;
+    height: 40vh;
+}
+
+
+#NitroTexte{
+    opacity: 0;
+    color: white;
+    font-size: 3vw;
+    margin-left: 2%;
+    /* Permet d'aligner le texte à la fin de la ligne */
+    text-align: justify;
+    font-family: Poppins, sans-serif;
+    margin-right: 5%;
+}
+
+footer{
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(77, 77, 77);
+    font-size: 2vw;
+    font-family: Poppins, sans-serif;
+}
+
+
+#logoMetal{
+    display: none;
+    height: 150px;
+}
+
+
+#vide{
+    display: none;
+    width: 150px;
+}
+
+#contactMe{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+#contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#mail a{
+    color: white;
+}
+
+#phone p{
+    color: white;
+}
+
+
+@media screen and (min-width: 640px) {
+    .damier {
+        height: 100px;
+        width: 150px ;
+        background-color: #fff; /* Couleur de fond blanche */
+        background-image: 
+          linear-gradient(45deg, black 25%, transparent 25%), /* Premier carré */
+          linear-gradient(-45deg, black 25%, transparent 25%), /* Deuxième carré */
+          linear-gradient(45deg, transparent 75%, black 75%), /* Troisième carré */
+          linear-gradient(-45deg, transparent 75%, black 75%); /* Quatrième carré */
+        background-size: 50px 50px; /* Taille des carrés */
+        background-position: 0 0, 0 25px, 25px -25px, -25px 0px; /* Position des carrés */
+      }
+    
+      /* Permet le modifier le titre h1 dans Nitro */
+    #Nitro h1{
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* On gère les damiers du second bloc */
+    #secondBlock .damier{
+        width: 50%;
+    }
+
+    #NitroTexte{
+        font-size: 2.5vw;
+    }
+
+    #buttonNitro a{
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    
+    #firstBlock{
+        height: 88vh;
+    }
+    .damier {
+        width: 250px;
+    }
+
+
+    #firstBlock{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #firstBlockText{
+    float: left;
+    width: 50%;
+    font-size: 2.1vw;
+    }
+
+    #firstBlockImage{
+        float: right;
+        margin-left: 10%;
+        width: 50%;
+    }
+
+    #texteImage{
+        color: white;
+        margin-top: 15px;
+        font-size: 18px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-right: 20%;
+    }
+
+    /* On gère les damiers du second bloc */
+    #secondBlock .damier{
+        width: 70%;
+    }
+
+    #secondBlockMain{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #nitroVideo{
+        width: 50%;
+        height: 100%;
+        margin-top: 175px;
+        margin-left: 5%;
+    }
+    
+    #nitroVideo iframe{
+        width: 80%;
+        height: 40vh;
+    }
+
+
+    #NitroTexte{
+        width: 50%;
+        font-size: 1.5vw;
+        margin-left: 2%;
+        margin-right: 5%;
+        margin-top: 150px;
+    }
+
+    footer{
+        font-size: 1.3vw;
+        justify-content: space-between;
+    }
+
+    #logoMetal{
+        display: block;
+    }
+
+    #vide{
+        display: block;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .damier{
+        width: 350px;
+    }
+
+    #firstBlockText{
+        font-size: 1.8vw;
+    }
+
+    footer{
+    font-size: 1vw;
+    }
+    
+}
+
+@media screen and (min-width: 1280px) {
+    .damier{
+        width: 450px;
+    }
+
+    #firstBlockText{
+        font-size: 1.5vw;
+    }
+
+    #contactMe{
+        width: 500px;
+    }
+
+    footer{
+        font-size: 17px;
+    }
+
+}
